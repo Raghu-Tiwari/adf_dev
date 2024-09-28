@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Simple_SimpleBilling_header.csv",
+				"fileName": "Simple_Billing_header.csv",
 				"container": "ecommercelogs"
 			},
 			"columnDelimiter": ",",
