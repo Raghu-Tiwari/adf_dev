@@ -106,7 +106,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "src_simple_billingheader",
+						"referenceName": "tgt_preprocessed_split_files",
 						"type": "DatasetReference"
 					}
 				]
