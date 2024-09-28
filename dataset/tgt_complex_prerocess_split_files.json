@@ -1,5 +1,5 @@
 {
-	"name": "tgt_preprocessed_split_files",
+	"name": "tgt_complex_prerocess_split_files",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage2",
@@ -9,8 +9,7 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"container": "preprocesssplitfiles"
+				"type": "AzureBlobStorageLocation"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
