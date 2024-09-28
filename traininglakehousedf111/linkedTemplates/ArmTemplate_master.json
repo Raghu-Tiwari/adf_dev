@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
 		"salesdbsource_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'salesdbsource'"
@@ -39,6 +43,10 @@
 			"type": "string",
 			"defaultValue": "https://traininglakehouse11.dfs.core.windows.net/"
 		},
+		"az_advancedadf_keyvault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://RTAdvanced-kv-adf.vault.azure.net/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -66,14 +74,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureBlobStorage1_connectionString": {
-						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
 					},
 					"salesdbsource_password": {
 						"value": "[parameters('salesdbsource_password')]"
 					},
 					"traininglakehouse_accountKey": {
 						"value": "[parameters('traininglakehouse_accountKey')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
 					"httpsource_properties_typeProperties_url": {
 						"value": "[parameters('httpsource_properties_typeProperties_url')]"
@@ -89,6 +100,9 @@
 					},
 					"traininglakehouse_properties_typeProperties_url": {
 						"value": "[parameters('traininglakehouse_properties_typeProperties_url')]"
+					},
+					"az_advancedadf_keyvault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('az_advancedadf_keyvault_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},
