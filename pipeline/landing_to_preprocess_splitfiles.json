@@ -23,7 +23,8 @@
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 3
 						}
 					},
 					"sink": {
@@ -50,7 +51,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "tgt_preprocessed_split_files",
+						"referenceName": "src_billing_header",
 						"type": "DatasetReference"
 					}
 				],
