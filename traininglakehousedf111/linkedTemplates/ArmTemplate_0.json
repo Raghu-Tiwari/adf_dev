@@ -275,8 +275,8 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "Billing_header.csv",
-						"container": "ecommercelogs"
+						"fileName": "preprocessed.csv",
+						"container": "preprocesssplitfiles"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
