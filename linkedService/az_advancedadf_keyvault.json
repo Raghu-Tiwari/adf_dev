@@ -1,0 +1,10 @@
+{
+	"name": "az_advancedadf_keyvault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://RTAdvanced-kv-adf.vault.azure.net/"
+		}
+	}
+}
