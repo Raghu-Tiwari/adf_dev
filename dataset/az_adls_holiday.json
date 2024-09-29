@@ -1,0 +1,21 @@
+{
+	"name": "az_adls_holiday",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Holiday.snappy.parquet",
+				"folderPath": "Training_data",
+				"container": "training"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
