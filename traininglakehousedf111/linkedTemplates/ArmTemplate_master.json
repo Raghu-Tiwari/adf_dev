@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'traininglakehouse'"
 		},
+		"az_advancedadf_keyvault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://RTAdvanced-kv-adf.vault.azure.net/"
+		},
 		"httpsource_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com/PacktPublishing/Data-Engineering-with-Apache-Spark-Delta-Lake-and-Lakehouse/main/project/prep/iplocation/IP2LOCATION-LITE-DB1.CSV"
@@ -42,10 +46,6 @@
 		"traininglakehouse_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://traininglakehouse11.dfs.core.windows.net/"
-		},
-		"az_advancedadf_keyvault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://RTAdvanced-kv-adf.vault.azure.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -86,6 +86,9 @@
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
+					"az_advancedadf_keyvault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('az_advancedadf_keyvault_properties_typeProperties_baseUrl')]"
+					},
 					"httpsource_properties_typeProperties_url": {
 						"value": "[parameters('httpsource_properties_typeProperties_url')]"
 					},
@@ -100,13 +103,30 @@
 					},
 					"traininglakehouse_properties_typeProperties_url": {
 						"value": "[parameters('traininglakehouse_properties_typeProperties_url')]"
-					},
-					"az_advancedadf_keyvault_properties_typeProperties_baseUrl": {
-						"value": "[parameters('az_advancedadf_keyvault_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "traininglakehousedf111_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'traininglakehousedf111_ArmTemplate_0')]"
+			]
 		}
 	]
 }
