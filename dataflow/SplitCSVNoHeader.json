@@ -15,28 +15,28 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "tgt_complex_prerocess_split_files",
+						"referenceName": "tgt_header_complex_prerocess_split_files",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
 				},
 				{
 					"dataset": {
-						"referenceName": "tgt_complex_prerocess_split_files",
+						"referenceName": "tgt_items_complex_prerocess_split_files_copy2",
 						"type": "DatasetReference"
 					},
 					"name": "sink2"
 				},
 				{
 					"dataset": {
-						"referenceName": "tgt_complex_prerocess_split_files",
+						"referenceName": "tgt_header_complex_prerocess_split_files",
 						"type": "DatasetReference"
 					},
 					"name": "sink3"
 				},
 				{
 					"dataset": {
-						"referenceName": "tgt_complex_prerocess_split_files",
+						"referenceName": "tgt_address_complex_prerocess_split_files_copy1",
 						"type": "DatasetReference"
 					},
 					"name": "sink4"
@@ -76,6 +76,7 @@
 				"     skipDuplicateMapOutputs: true) ~> sink3",
 				"split1@Addresses sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     emptyLinesAsHeader: 3,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink4"
 			]

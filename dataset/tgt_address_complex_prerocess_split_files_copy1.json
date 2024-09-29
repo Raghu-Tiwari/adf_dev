@@ -1,5 +1,5 @@
 {
-	"name": "tgt_header_complex_prerocess_split_files",
+	"name": "tgt_address_complex_prerocess_split_files_copy1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage2",
@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@concat('header', '.csv')",
+					"value": "@concat('Address', '.csv')",
 					"type": "Expression"
 				},
 				"container": "preprocesssplitfiles"
