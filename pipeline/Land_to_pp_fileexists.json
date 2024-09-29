@@ -8,7 +8,11 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"timeout": "0.12:00:00"
+					"expression": {
+						"value": "@variables('Fileexists')",
+						"type": "Expression"
+					},
+					"timeout": "0.0:01:00"
 				}
 			}
 		],
