@@ -65,6 +65,23 @@
 									"type": "Expression"
 								}
 							}
+						},
+						{
+							"name": "Wait1",
+							"description": "",
+							"type": "Wait",
+							"dependsOn": [
+								{
+									"activity": "Set variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 10
+							}
 						}
 					],
 					"timeout": "0.0:01:00"
