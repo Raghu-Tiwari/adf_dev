@@ -21,13 +21,19 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "split1"
+				}
+			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     skipLines: 3) ~> source1",
-				"source1 sink(allowSchemaDrift: true,",
+				"source1 split(ERROR_FUNCTION(''),",
+				"     disjoint: true) ~> split1@(Column1 , other)",
+				"split1@Column1  sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     emptyLinesAsHeader: 3,",
 				"     skipDuplicateMapInputs: true,",
