@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@concat('output_', Col0_asString, '.csv')"
+				"fileName": "@concat('output_', Col0_asString, '.csv')",
+				"container": "preprocesssplitfiles"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

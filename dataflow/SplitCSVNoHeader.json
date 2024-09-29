@@ -21,9 +21,17 @@
 					"name": "sink1"
 				},
 				{
+					"dataset": {
+						"referenceName": "tgt_complex_prerocess_split_files",
+						"type": "DatasetReference"
+					},
 					"name": "sink2"
 				},
 				{
+					"dataset": {
+						"referenceName": "tgt_complex_prerocess_split_files",
+						"type": "DatasetReference"
+					},
 					"name": "sink3"
 				},
 				{
@@ -55,6 +63,7 @@
 				"     )) ~> sink1",
 				"split1@items sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     emptyLinesAsHeader: 3,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink2",
 				"split1@other sink(allowSchemaDrift: true,",
