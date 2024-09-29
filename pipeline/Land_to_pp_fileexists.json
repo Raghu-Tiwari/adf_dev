@@ -1,0 +1,26 @@
+{
+	"name": "Land_to_pp_fileexists",
+	"properties": {
+		"activities": [
+			{
+				"name": "Until1",
+				"type": "Until",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"timeout": "0.12:00:00"
+				}
+			}
+		],
+		"variables": {
+			"Fileexists": {
+				"type": "Boolean",
+				"defaultValue": "False"
+			}
+		},
+		"folder": {
+			"name": "Elec_Source1_RT"
+		},
+		"annotations": []
+	}
+}
