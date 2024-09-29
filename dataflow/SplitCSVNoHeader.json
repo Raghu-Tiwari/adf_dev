@@ -25,6 +25,9 @@
 				},
 				{
 					"name": "sink3"
+				},
+				{
+					"name": "sink4"
 				}
 			],
 			"transformations": [
@@ -40,7 +43,7 @@
 				"source1 split(toString(byName('_col0_')) == 'Billiingheader',",
 				"     toString(byName('_col0_')) == 'BilliingAddress',",
 				"     toString(byName('_col0_')) == 'BilliingItem',",
-				"     disjoint: false) ~> split1@(header, Addresses, items, other)",
+				"     disjoint: true) ~> split1@(header, Addresses, items, other)",
 				"split1@header sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     emptyLinesAsHeader: 3,",
@@ -57,7 +60,11 @@
 				"split1@other sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink3"
+				"     skipDuplicateMapOutputs: true) ~> sink3",
+				"split1@Addresses sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink4"
 			]
 		}
 	}
