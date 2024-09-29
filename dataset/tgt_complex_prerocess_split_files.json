@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "headerfile"
+				"fileName": "@concat('output_', Col0_asString, '.csv')"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
