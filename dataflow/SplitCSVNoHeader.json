@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "SplitCSVNoHeader",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -19,6 +19,12 @@
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
+				},
+				{
+					"name": "sink2"
+				},
+				{
+					"name": "sink3"
 				}
 			],
 			"transformations": [
@@ -31,9 +37,11 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     skipLines: 3) ~> source1",
-				"source1 split(ERROR_FUNCTION(''),",
-				"     disjoint: true) ~> split1@(, other)",
-				"split1 sink(allowSchemaDrift: true,",
+				"source1 split(toString(byName('_col0_')) == 'Billiingheader',",
+				"     toString(byName('_col0_')) == 'BilliingAddress',",
+				"     toString(byName('_col0_')) == 'BilliingItem',",
+				"     disjoint: false) ~> split1@(header, Addresses, items, other)",
+				"split1@header sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     emptyLinesAsHeader: 3,",
 				"     skipDuplicateMapInputs: true,",
@@ -41,7 +49,15 @@
 				"     partitionBy('key',",
 				"          0,",
 				"          ERROR_FUNCTION('')",
-				"     )) ~> sink1"
+				"     )) ~> sink1",
+				"split1@items sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink2",
+				"split1@other sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink3"
 			]
 		}
 	}
