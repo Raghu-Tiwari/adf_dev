@@ -35,6 +35,10 @@
 					"name": "sink3"
 				},
 				{
+					"dataset": {
+						"referenceName": "tgt_complex_prerocess_split_files",
+						"type": "DatasetReference"
+					},
 					"name": "sink4"
 				}
 			],
