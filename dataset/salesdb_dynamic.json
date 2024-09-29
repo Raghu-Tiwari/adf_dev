@@ -1,0 +1,23 @@
+{
+	"name": "salesdb_dynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "salesdbsource",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "string",
+				"defaultValue": "placeholder"
+			},
+			"tablename": {
+				"type": "string",
+				"defaultValue": "placeholder"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
